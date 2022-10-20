@@ -4,23 +4,23 @@ import "errors"
 
 // Route represents a request of new delivery request
 type Route struct {
-	ID        string
-	ClientID  string
-	Positions []Position
+	ID        string `json:"routeId"`
+	ClientID  string `json:"clientId"`
+	Positions []Position `json:"position"`
 }
 
 // Position is a type which contains the lat and long
 type Position struct {
-	Lat  float64
-	Long float64
+	Lat  float64 `json:"lat"`
+	Long float64 `json:"long"`
 }
 
 // PartialRoutePosition is the actual response which the system will return
 type PartialRoutePosition struct {
-	ID       string
-	ClientID string
-	Position []float64
-	Finished bool
+	ID       string    `json:"routeId"`
+	ClientID string    `json:"clientId"`
+	Position []float64 `json:"position"`
+	Finished bool      `json:"finished"`
 }
 
 // LoadPositions loads from a .txt file all positions (lat and long) to the Position attribute of the struct
