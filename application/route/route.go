@@ -12,3 +12,8 @@ type Position struct {
 	Lat  float64
 	Long float64
 }
+
+// LoadPositions loads from a .txt file all positions (lat and long) to the Position attribute of the struct
+func (r *Route) LoadPositions() error {
+	
+}
