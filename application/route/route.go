@@ -37,6 +37,10 @@ func (r *Route) LoadPositions() error {
 		if err != nil {
 			return nil
 		}
+		r.Positions = append(r.Positions, Position{
+			Lat:  lat,
+			Long: long,
+		})
 	}
 
 }
