@@ -66,6 +66,12 @@ func (r *Route) ExportJsonPositions() ([]string, error) {
 		if total-1 == k {
 			route.Finished = true
 		}
+		jsonRoute, err := json.Marshal(route)
+		if err != nil {
+			return nil, err
+		}
+		result = append(result, string(jsonRoute))
 	}
+	return result, nil
 
 }
