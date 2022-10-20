@@ -55,5 +55,8 @@ func (r *Route) LoadPositions() error {
 }
 
 func (r *Route) ExportJsonPositions() ([]string, error) {
+	var route PartialRoutePosition
+	var result []string
+	total := len(r.Positions)
 	
 }
