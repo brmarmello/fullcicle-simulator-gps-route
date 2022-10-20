@@ -45,3 +45,7 @@ func (r *Route) LoadPositions() error {
 	return nil
 
 }
+
+func (r *Route) ExportJsonPositions() ([]string, error) {
+	
+}
