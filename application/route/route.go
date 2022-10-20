@@ -42,5 +42,6 @@ func (r *Route) LoadPositions() error {
 			Long: long,
 		})
 	}
+	return nil
 
 }
