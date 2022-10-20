@@ -15,6 +15,14 @@ type Position struct {
 	Long float64
 }
 
+// PartialRoutePosition is the actual response which the system will return
+type PartialRoutePosition struct {
+	ID       string
+	ClientID string
+	Position []float64
+	Finished bool
+}
+
 // LoadPositions loads from a .txt file all positions (lat and long) to the Position attribute of the struct
 func (r *Route) LoadPositions() error {
 	if r.ID == "" {
