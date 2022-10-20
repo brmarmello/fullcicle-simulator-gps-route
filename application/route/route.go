@@ -58,5 +58,11 @@ func (r *Route) ExportJsonPositions() ([]string, error) {
 	var route PartialRoutePosition
 	var result []string
 	total := len(r.Positions)
-	
+	for k, v := range r.Positions {
+		route.ID = r.ID
+		route.ClientID = r.ClientID
+		route.Position = []float64{v.Lat, v.Long}
+		route.Finished = false
+	}
+
 }
