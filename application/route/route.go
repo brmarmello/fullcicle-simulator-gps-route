@@ -1,5 +1,7 @@
 package route
 
+import "errors"
+
 // Route represents a request of new delivery request
 type Route struct {
 	ID        string
@@ -15,5 +17,7 @@ type Position struct {
 
 // LoadPositions loads from a .txt file all positions (lat and long) to the Position attribute of the struct
 func (r *Route) LoadPositions() error {
-	
+	if r.ID == "" {
+		return errors.New("route id not informed")
+	}
 }
