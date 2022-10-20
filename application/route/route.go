@@ -24,4 +24,11 @@ func (r *Route) LoadPositions() error {
 	if err != nil {
 		return err
 	}
+	// PS.: In "go" the "defer" resource is used to run everything that is needed, leaving "f.Close() to run last!
+	defer f.Close()
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		
+	}
+
 }
