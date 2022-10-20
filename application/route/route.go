@@ -28,7 +28,15 @@ func (r *Route) LoadPositions() error {
 	defer f.Close()
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
-		
+		data := strings.Split(scanner.Text(), ",")
+		lat, err := strconv.ParseFloat(data[0], 64)
+		if err != nil {
+			return nil
+		}
+		long, err := strconv.ParseFloat(data[1], 64)
+		if err != nil {
+			return nil
+		}
 	}
 
 }
