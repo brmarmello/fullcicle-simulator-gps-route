@@ -63,6 +63,9 @@ func (r *Route) ExportJsonPositions() ([]string, error) {
 		route.ClientID = r.ClientID
 		route.Position = []float64{v.Lat, v.Long}
 		route.Finished = false
+		if total-1 == k {
+			route.Finished = true
+		}
 	}
 
 }
